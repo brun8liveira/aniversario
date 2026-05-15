@@ -23,25 +23,51 @@
       object-fit:contain;
       cursor:pointer;
     }
+
+    /* FRASE DO RODAPÉ */
+    #assinatura{
+      position:fixed;
+      bottom:25px;
+      width:100%;
+      text-align:center;
+      color:white;
+      font-size:28px;
+      font-family:cursive;
+      letter-spacing:2px;
+
+      text-shadow:
+        0 0 10px rgba(0,0,0,0.8),
+        0 0 20px rgba(0,0,0,0.6);
+
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.45),
+        transparent
+      );
+
+      padding:20px 10px;
+
+      pointer-events:none;
+    }
   </style>
 </head>
+
 <body>
 
 <img id="foto" src="./fotos/fotoaniversario.jpeg">
+
+<div id="assinatura">
+  Luís Miguel - 18/05
+</div>
 
 <script>
 
 const foto = document.getElementById("foto");
 
-foto.addEventListener("click", trocarFoto);
-
-function trocarFoto(){
-
+foto.addEventListener("click", () => {
   const numero = Math.floor(Math.random() * 50) + 1;
-
   foto.src = `./fotos/foto${numero}.jpeg?t=${Date.now()}`;
-
-}
+});
 
 </script>
 
