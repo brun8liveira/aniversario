@@ -9,13 +9,12 @@
   <style>
     body{
       margin:0;
-      background:#000;
+      background:black;
       display:flex;
       justify-content:center;
       align-items:center;
       height:100vh;
       overflow:hidden;
-      font-family:Arial;
     }
 
     img{
@@ -23,29 +22,26 @@
       height:100vh;
       object-fit:contain;
       cursor:pointer;
-      transition:0.3s;
-    }
-
-    img:hover{
-      opacity:0.95;
     }
   </style>
 </head>
 <body>
 
-<img id="foto" src="fotos/fotoaniversario.jpeg">
+<img id="foto" src="./fotos/fotoaniversario.jpeg">
 
 <script>
 
 const foto = document.getElementById("foto");
 
-foto.addEventListener("click", () => {
+foto.addEventListener("click", trocarFoto);
+
+function trocarFoto(){
 
   const numero = Math.floor(Math.random() * 50) + 1;
 
-  foto.src = `fotos/foto(${numero}).jpeg?${new Date().getTime()}`;
+  foto.src = `./fotos/foto${numero}.jpeg?t=${Date.now()}`;
 
-});
+}
 
 </script>
 
