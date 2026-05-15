@@ -64,12 +64,17 @@
 
 const foto = document.getElementById("foto");
 
-foto.addEventListener("click", () => {
+function trocarFoto(){
   const numero = Math.floor(Math.random() * 50) + 1;
   foto.src = `./fotos/foto${numero}.jpeg?t=${Date.now()}`;
-});
+}
+
+// troca ao clicar
+foto.addEventListener("click", trocarFoto);
+
+// troca automática (a cada 3 segundos)
+setInterval(trocarFoto, 3000);
 
 </script>
-
 </body>
 </html>
